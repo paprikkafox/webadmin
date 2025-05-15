@@ -28,11 +28,14 @@ use pages::{
     },
     config::edit::DEFAULT_SETTINGS_URL,
     directory::{dns::DnsDisplay, edit::PrincipalEdit, list::PrincipalList},
+
+    #[cfg(feature = "enterprise")]
     enterprise::{
         dashboard::Dashboard,
         tracing::{display::SpanDisplay, list::SpanList, live::LiveTracing},
         undelete::UndeleteList,
     },
+
     manage::{
         spam::{SpamTest, SpamTrain},
         troubleshoot::{TroubleshootDelivery, TroubleshootDmarc},
@@ -165,7 +168,7 @@ pub fn App() -> impl IntoView {
 
                     redirect_path="/login"
                     condition=move || permissions.get().is_some()
-                >
+                >   
                     <ProtectedRoute
                         path="/dashboard/:object?"
                         view=Dashboard
