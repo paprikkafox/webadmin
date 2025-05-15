@@ -36,14 +36,19 @@ use crate::{
         oauth::use_authorization,
     },
     pages::{
-        #[cfg(feature = "enterprise")]
-        enterprise::tracing::event::{Event, Key},
-
         maybe_plural,
         queue::messages::{Message, Status},
         FormatDateTime, List,
     },
 };
+
+#[cfg(feature = "enterprise")]
+use crate::{
+    pages::{
+        enterprise::tracing::event::{Event, Key}
+    },
+};
+
 
 #[component]
 pub fn QueueManage() -> impl IntoView {

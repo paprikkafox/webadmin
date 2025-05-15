@@ -27,7 +27,7 @@ use pages::{
         app_password::{AppPasswordCreate, AppPasswords},
         mfa::ManageMfa,
     },
-    
+
     config::edit::DEFAULT_SETTINGS_URL,
     directory::{dns::DnsDisplay, edit::PrincipalEdit, list::PrincipalList},
 
@@ -44,7 +44,7 @@ use pages::{
         tracing::{display::SpanDisplay, list::SpanList, live::LiveTracing},
         undelete::UndeleteList,
     }
-}
+};
 
 pub static VERSION_NAME: &str = concat!("Stalwart Management UI v", env!("CARGO_PKG_VERSION"),);
 
