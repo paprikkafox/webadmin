@@ -40,6 +40,8 @@ rand = "0.8"
 leptos-chartistry = "0.1.7"
 
 [features]
-demo = []
+default = ["enterprise"]
 #default = ["demo"]
-default = []
+demo = []
+enterprise = []
+foss = []

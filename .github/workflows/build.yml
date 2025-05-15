@@ -38,7 +38,7 @@ jobs:
 
       - name: Build the Rust WASM app and all of its assets
         run: |
-          trunk build --release
+          trunk build --release --features foss
 
       - name: Compress bundle
         run: |
