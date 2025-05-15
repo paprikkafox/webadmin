@@ -21,26 +21,30 @@ use gloo_storage::{SessionStorage, Storage};
 use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
+
 use pages::{
     account::{
         app_password::{AppPasswordCreate, AppPasswords},
         mfa::ManageMfa,
     },
+    
     config::edit::DEFAULT_SETTINGS_URL,
     directory::{dns::DnsDisplay, edit::PrincipalEdit, list::PrincipalList},
-
-    #[cfg(feature = "enterprise")]
-    enterprise::{
-        dashboard::Dashboard,
-        tracing::{display::SpanDisplay, list::SpanList, live::LiveTracing},
-        undelete::UndeleteList,
-    },
 
     manage::{
         spam::{SpamTest, SpamTrain},
         troubleshoot::{TroubleshootDelivery, TroubleshootDmarc},
     },
 };
+
+#[cfg(feature = "enterprise")]
+use pages::{
+    enterprise::{
+        dashboard::Dashboard,
+        tracing::{display::SpanDisplay, list::SpanList, live::LiveTracing},
+        undelete::UndeleteList,
+    }
+}
 
 pub static VERSION_NAME: &str = concat!("Stalwart Management UI v", env!("CARGO_PKG_VERSION"),);
 
