@@ -11,7 +11,10 @@ pub mod account;
 pub mod authorize;
 pub mod config;
 pub mod directory;
+
+#[cfg(feature = "enterprise")]
 pub mod enterprise;
+
 pub mod login;
 pub mod manage;
 pub mod notfound;
